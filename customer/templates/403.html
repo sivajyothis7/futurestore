@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+
+<div class="container p-5">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="card text-center">
+    <div class="card-header">
+        <h4>@EASY STORE</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Permission Denied</h5>
+        <p class="card-text">Sorry,This page does not exist</p>
+        <a href="{%url 'home'%}" class="btn btn-primary">Go to Home</a>
+    </div>
+    <div class="card-footer text-muted">
+        <h6>@Easy Store</h6>
+    </div>
+</div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                         <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{product.product_name}}</h5>
+                        <!-- Product price-->
+
+                        <p>Rs.{{product.price}}</p>
+                        <p>{{product.category}}</p>
+                        <p>{{product.description}}</p>
+                    </div>
+                </div>
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit">ADD</button>
+            </form>
+
+
+
+        </div>
+        <div class="col-3"></div>
+            </div>
+        </div>
+
+{%endblock%}

@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+
+<div class="container">
+    {%for wish in wishlist%}
+    <div class="row ">
+        <div class="col-6">
+            <div class="card h-100">
+                <!-- Product image-->
+                <img class="card-img-top" src="{{wish.product.image.url}}" alt="..."/>
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{wish.product.product_name}}</h5>
+                        <!-- Product price-->
+                        <p>Rs.{{wish.product.price}}</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-3">
+
+            </div>
+            <div class="col-3">
+
+                <a href="{%url 'product-detail' wish.product.id %}" class="btn btn-outline-success">view detail</a>
+
+            </div>
+        </div>
+        {%endfor%}
+
+</div>
+{%endblock%}

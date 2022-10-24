@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+
+<div class="container">
+    {%for cart in carts%}
+    <div class="row ">
+        <div class="col-6">
+            <div class="card h-100">
+                <!-- Product image-->
+                <img class="card-img-top" src="{{cart.product.image.url}}" alt="..."/>
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">{{cart.product.product_name}}</h5>
+                        <!-- Product price-->
+                        <p>Rs.{{cart.product.price}}</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-3">
+                qty:{{cart.qty}}
+                status:{{cart.status}}
+            </div>
+            <div class="col-3">
+<!--                <a href="{%url 'addto-cart' cart.id%}" class="btn btn-outline-danger">Remove</a>-->
+                {%if cart.status != "order-placed"%}
+                <a href="{%url 'place_order' cart.id cart.product.id%}" class="btn btn-outline-success">CheckOut</a>
+                {%endif%}
+            </div>
+        </div>
+        {%endfor%}
+
+</div>
+{%endblock%}

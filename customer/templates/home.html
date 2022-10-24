@@ -1,0 +1,238 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body_block%}
+
+
+<!-- HERO SECTION-->
+<div class="container">
+    <div class="row">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <section class="hero pb-3 bg-cover bg-center d-flex align-items-center"
+                             style="background: url({%static 'img/hero-banner-alt.jpg'%})">
+                        <div class="container py-5 m-5">
+                            <div class="row px-4 px-lg-5">
+                                <div class="col-lg-6">
+                                    <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                                    <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark"
+                                                                                                    href="">Browse
+                                    collections</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--                    <div class="carousel-caption d-none d-md-block">-->
+                    <!--                        <h5>First slide label</h5>--hero-banner-alt>
+                                       <p>Some representative placeholder content for the first slide.</p>-->
+                    <!--                    </div>-->
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <section class="hero pb-3 bg-cover bg-center d-flex align-items-center"
+                             style="background: url({%static 'img/hero-shop.jpg'%})">
+                        <div class="container py-5 m-5">
+                            <div class="row px-4 px-lg-5">
+                                <div class="col-lg-6">
+                                    <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                                    <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark"
+                                                                                                    href="">Browse
+                                    collections</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="carousel-item">
+                    <section class="hero pb-3 bg-cover bg-center d-flex align-items-center"
+                             style="background: url({%static 'img/hero-banner.jpg'%})">
+                        <div class="container py-5 m-5">
+                            <div class="row px-4 px-lg-5">
+                                <div class="col-lg-6">
+                                    <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
+                                    <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark"
+                                                                                                    href="">Browse
+                                    collections</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!--    <section class="hero pb-3 bg-cover bg-center d-flex align-items-center"-->
+<!--             style="background: url({%static 'img/hero-banner-alt.jpg'%})">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="row px-4 px-lg-5">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>-->
+<!--                    <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark"-->
+<!--                                                                                    href="shop.html">Browse-->
+<!--                    collections</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!-- CATEGORIES SECTION-->
+<section class="pt-5">
+    <header class="text-center">
+        <p class="small text-muted small text-uppercase mb-1">Carefully created collections</p>
+        <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+    </header>
+    <div class="container">
+
+
+        <div class="row">
+            {%for category in categories%}
+            <div class="col-md-4"><a class="category-item" href="{%url 'category-list'%}"><img class="img-fluid"
+                                                                                               src="{{category.category_image.url}}"
+                                                                                               alt=""/><strong
+                    class="category-item-title">{{category.category_name}}</strong></a>
+            </div>
+            <!--            <div class="col-md-4"><a class="category-item mb-4" href="shop.html"><img class="img-fluid"-->
+            <!--                                                                                      src="{%static 'img/cat-img-2.jpg'%}"-->
+            <!--                                                                                      alt=""/><strong-->
+            <!--                    class="category-item-title">Shoes</strong></a><a class="category-item" href="shop.html"><img-->
+            <!--                    class="img-fluid" src="{%static 'img/cat-img-3.jpg'%}" alt=""/><strong class="category-item-title">Watches</strong></a>-->
+            <!--            </div>-->
+            <!--            <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid"-->
+            <!--                                                                                 src="{%static 'img/cat-img-4.jpg'%}"-->
+            <!--                                                                                 alt=""/><strong-->
+            <!--                    class="category-item-title">Electronics</strong></a>-->
+            <!--            </div>-->
+            {%endfor%}
+        </div>
+    </div>
+</section>
+<!-- TRENDING PRODUCTS-->
+<div class="container">
+    <header  class="text-center m-5">
+        <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
+        <h2 class="h5 text-uppercase mb-4">Top trending products</h2>
+    </header>
+
+
+    <div class="row">
+        <!-- PRODUCT-->
+        {%for product in products%}
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product text-center">
+                <div class="position-relative mb-3">
+                    <div class="badge text-white bg-"></div>
+                    <a class="d-block" href="{%url 'product-detail' product.id %}"><img class="img-fluid w-100"
+                                                               src="{{product.image.url}}" alt="..."></a>
+                    <div class="product-overlay">
+                        <ul class="mb-0 list-inline">
+                            {%if products in wishlist%}
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href=""><i
+                                    class="far fa-heart"></i></a></li>
+                        {%else%}
+                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="{%url 'wishlist' product.id%}"><i
+                                    class="far fa-heart"></i></a></li>
+                        {%endif%}
+
+                            <li class="list-inline-item m-0 p-0">
+                                <a class="btn btn-sm btn-dark" href="{%url 'product-detail' product.id %}">View Details</a>
+                            </li>
+                            <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
+                                                                 href="#productView" data-bs-toggle="modal"><i
+                                    class="fas fa-expand"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h6><a class="reset-anchor" href="{%url 'product-detail' product.id %}">{{product.product_name}}</a></h6>
+                <p class="small text-muted">Rs {{product.price}}</p>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+    <!-- SERVICES-->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center gy-3">
+                <div class="col-lg-4">
+                    <div class="d-inline-block">
+                        <div class="d-flex align-items-end">
+                            <svg class="svg-icon svg-icon-big svg-icon-light">
+                                <use xlink:href="#delivery-time-1"></use>
+                            </svg>
+                            <div class="text-start ms-3">
+                                <h6 class="text-uppercase mb-1">Free shipping</h6>
+                                <p class="text-sm mb-0 text-muted">Free shipping worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-inline-block">
+                        <div class="d-flex align-items-end">
+                            <svg class="svg-icon svg-icon-big svg-icon-light">
+                                <use xlink:href="#helpline-24h-1"></use>
+                            </svg>
+                            <div class="text-start ms-3">
+                                <h6 class="text-uppercase mb-1">24 x 7 service</h6>
+                                <p class="text-sm mb-0 text-muted">Free shipping worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-inline-block">
+                        <div class="d-flex align-items-end">
+                            <svg class="svg-icon svg-icon-big svg-icon-light">
+                                <use xlink:href="#label-tag-1"></use>
+                            </svg>
+                            <div class="text-start ms-3">
+                                <h6 class="text-uppercase mb-1">Festivaloffers</h6>
+                                <p class="text-sm mb-0 text-muted">Free shipping worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEWSLETTER-->
+    <section class="py-5">
+        <div class="container p-0">
+            <div class="row gy-3">
+                <div class="col-lg-6">
+                    <h5 class="text-uppercase">Let's be friends!</h5>
+                    <p class="text-sm text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form action="#">
+                        <div class="input-group">
+                            <input class="form-control form-control-lg" type="email"
+                                   placeholder="Enter your email address" aria-describedby="button-addon2">
+                            <button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+
+{%endblock%}

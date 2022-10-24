@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body_block%}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1>Registration</h1>
+            <form action="" class="border mt-3" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-danger">SignUp</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>,
+</div>
+
+{%endblock%}
